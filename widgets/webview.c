@@ -580,7 +580,7 @@ luaH_webview_newindex(lua_State *L, luakit_token_t token)
     return emit ? luaH_object_property_signal(L, 1, token) : 0;
 }
 
-static gboolean
+/*static gboolean
 expose_cb(GtkWidget* UNUSED(widget), GdkEventExpose* UNUSED(e), widget_t *w)
 {
     lua_State *L = globalconf.L;
@@ -588,7 +588,7 @@ expose_cb(GtkWidget* UNUSED(widget), GdkEventExpose* UNUSED(e), widget_t *w)
     luaH_object_emit_signal(L, -1, "expose", 0, 0);
     lua_pop(L, 1);
     return FALSE;
-}
+}*/
 
 static gint
 luaH_push_hit_test(lua_State *L, WebKitWebView *v, GdkEventButton *ev)
@@ -833,7 +833,7 @@ widget_webview(widget_t *w, luakit_token_t UNUSED(token))
       "signal::create-web-view",                      G_CALLBACK(create_web_view_cb),           w,
       "signal::document-load-finished",               G_CALLBACK(document_load_finished_cb),    w,
       "signal::download-requested",                   G_CALLBACK(download_request_cb),          w,
-      "signal::expose-event",                         G_CALLBACK(expose_cb),                    w,
+    //  "signal::expose-event",                         G_CALLBACK(expose_cb),                    w,
       "signal::focus-in-event",                       G_CALLBACK(focus_cb),                     w,
       "signal::focus-out-event",                      G_CALLBACK(focus_cb),                     w,
       "signal::hovering-over-link",                   G_CALLBACK(link_hover_cb),                w,

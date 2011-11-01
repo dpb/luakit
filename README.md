@@ -11,7 +11,7 @@ luakit behaves similarly out of the box.
 
 ## Requirements
 
- * gtk2
+ * gtk3
  * Lua (5.1)
  * lfs (lua file system)
  * libwebkit (webkit-gtk)

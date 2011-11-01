@@ -128,8 +128,8 @@ widget_box(widget_t *w, luakit_token_t token)
     w->newindex = luaH_box_newindex;
     w->destructor = widget_destructor;
 
-    w->widget = (token == L_TK_VBOX) ? gtk_vbox_new(FALSE, 0) :
-            gtk_hbox_new(FALSE, 0);
+    w->widget = (token == L_TK_VBOX) ? gtk_box_new(GTK_ORIENTATION_VERTICAL, 0) :
+            gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
 
     g_object_set_data(G_OBJECT(w->widget), "lua_widget", (gpointer) w);
     g_object_connect(G_OBJECT(w->widget),

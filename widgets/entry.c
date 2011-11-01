@@ -189,11 +189,11 @@ widget_entry(widget_t *w, luakit_token_t UNUSED(token))
       NULL);
 
     // Further signal to replace "signal::changed"
-    GtkEntry* entry = GTK_ENTRY(w->widget);
-    g_object_connect(G_OBJECT(entry->im_context),
+    /*GtkEntry* entry = GTK_ENTRY(w->widget);
+    g_object_connect(GTK_IM_CONTEXT(entry),
       "swapped-signal::commit", G_CALLBACK(changed_cb), w,
       NULL);
-
+*/
     gtk_widget_show(w->widget);
     return w;
 }
